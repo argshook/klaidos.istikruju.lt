@@ -118,6 +118,7 @@ const App = () => {
   };
 
   const modalCount = infoModal ? counts[infoModal.id] || 0 : 0;
+  const showModalCounter = infoModal?.id !== APP_INFO_MODAL.id;
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-200 font-sans selection:bg-rose-500/30 overflow-hidden relative">
@@ -214,28 +215,30 @@ const App = () => {
 
                 <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex items-start justify-between w-full">
-                    <div className="gap-1 bg-black/20 text-white/90 backdrop-blur-sm flex items-center px-2 py-1 rounded-full">
-                      <button
-                        onClick={() => decrement(infoModal.id)}
-                        className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
-                        aria-label="Mažinti"
-                      >
-                        -
-                      </button>
-                      <span className="w-8 text-sm font-black text-center">
-                        {modalCount}
-                      </span>
-                      <button
-                        onClick={() => increment(infoModal.id)}
-                        className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
-                        aria-label="Didinti"
-                      >
-                        +
-                      </button>
-                    </div>
+                    {showModalCounter && (
+                      <div className="gap-1 bg-black/20 text-white/90 backdrop-blur-sm flex items-center px-2 py-1 rounded-full">
+                        <button
+                          onClick={() => decrement(infoModal.id)}
+                          className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                          aria-label="Mažinti"
+                        >
+                          -
+                        </button>
+                        <span className="w-8 text-sm font-black text-center">
+                          {modalCount}
+                        </span>
+                        <button
+                          onClick={() => increment(infoModal.id)}
+                          className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                          aria-label="Didinti"
+                        >
+                          +
+                        </button>
+                      </div>
+                    )}
                     <button
                       onClick={() => setInfoModal(null)}
-                      className="bg-black/20 hover:bg-black/40 text-white/80 hover:text-white transition-colors backdrop-blur-sm p-2 rounded-full"
+                      className="ml-auto bg-black/20 hover:bg-black/40 text-white/80 hover:text-white transition-colors backdrop-blur-sm p-2 rounded-full"
                     >
                       <X size={20} />
                     </button>
