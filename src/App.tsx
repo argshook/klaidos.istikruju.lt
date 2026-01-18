@@ -27,12 +27,23 @@ const App = () => {
   }, [counts]);
 
   const increment = useCallback((id: string) => {
-    // navigator.vibrate?.(15); // Stronger haptic feedback
+    navigator.vibrate?.(15); // Stronger haptic feedback
     setCounts((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
   }, []);
 
+  const decrement = useCallback((id: string) => {
+    setCounts((prev) => {
+      const nextValue = Math.max((prev[id] || 0) - 1, 0);
+      return { ...prev, [id]: nextValue };
+    });
+  }, []);
+
   const resetAll = () => {
-    if (window.confirm("Ištrinti skaičiavimus?")) {
+    if (
+      window.confirm(
+        "Ištrinti skaičiavimus? Visos mąstymo klaidos bus grąžintos į nulį.",
+      )
+    ) {
       setCounts(Object.fromEntries(ALL_ERRORS.map((e) => [e.id, 0])));
     }
   };
@@ -75,20 +86,18 @@ const App = () => {
         )}
 
         <div className="z-10 flex items-start justify-between w-full">
-          <span
-            className={`text-3xl font-black tracking-tighter transition-colors duration-300 drop-shadow-lg
-              ${isActive ? "scale-110 origin-left text-white" : "text-slate-600"}
-            `}
-          >
-            {count > 0 ? count : 0}
-          </span>
+          {count > 0 && (
+            <span className="drop-shadow-lg scale-110 origin-left text-3xl font-black tracking-tighter text-white">
+              {count}
+            </span>
+          )}
 
           <div
             onClick={(e) => {
               e.stopPropagation();
               increment(error.id);
             }}
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white/70 hover:text-white transition-all active:scale-90 border-white/10 z-20 p-2 border rounded-full"
+            className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white/70 hover:text-white transition-all active:scale-90 border-white/10 z-20 p-2 ml-auto border rounded-full"
           >
             <Plus size={18} />
           </div>
@@ -108,6 +117,8 @@ const App = () => {
     );
   };
 
+  const modalCount = infoModal ? counts[infoModal.id] || 0 : 0;
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-200 font-sans selection:bg-rose-500/30 overflow-hidden relative">
       <div
@@ -119,25 +130,34 @@ const App = () => {
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[100px] pointer-events-none" />
       <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-rose-600/10 blur-[100px] pointer-events-none" />
 
-      <header className="relative z-50 flex items-end justify-between px-4 pt-10 pb-8">
-        <div>
-          <h1 className="text-2xl font-black tracking-tight text-white">
-            Mąstymo Klaidos
-          </h1>
-          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">
-            Kognityvinis Stebėtojas
-          </p>
+      <header className="md:max-w-3xl relative z-50 w-full max-w-lg px-4 pt-10 pb-8 mx-auto">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-slate-950/80 backdrop-blur-xl shadow-[0_20px_80px_-40px_rgba(59,130,246,0.6)]">
+          <div className="-top-16 -left-10 bg-emerald-400/20 blur-3xl absolute w-40 h-40 rounded-full pointer-events-none" />
+          <div className="-bottom-20 right-6 bg-rose-500/20 blur-3xl absolute w-48 h-48 rounded-full pointer-events-none" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_50%)]" />
+
+          <div className="gap-4 sm:px-6 sm:py-6 relative z-10 flex items-center justify-between p-5">
+            <div className="min-w-0">
+              <h1 className="sm:text-4xl bg-clip-text bg-gradient-to-r from-white via-emerald-100 to-rose-100 text-3xl font-black tracking-tight text-transparent">
+                Mąstymo Klaidos
+              </h1>
+              <p className="sm:text-sm text-slate-300/80 mt-1 text-xs font-bold uppercase">
+                Atpažinti ir žymėk
+              </p>
+            </div>
+            <button
+              onClick={() => setInfoModal(APP_INFO_MODAL)}
+              className="group border-white/10 bg-white/5 text-white/70 transition-all active:scale-90 w-11 h-11 relative flex items-center justify-center overflow-hidden border rounded-full shadow-lg"
+            >
+              <span className="bg-gradient-to-br from-emerald-400/30 to-rose-400/30 transition-opacity duration-300 group-hover:opacity-100 absolute inset-0 opacity-0" />
+              <HelpCircle size={18} className="relative z-10" />
+            </button>
+          </div>
         </div>
-        <button
-          onClick={() => setInfoModal(APP_INFO_MODAL)}
-          className="bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white transition-all border-white/5 active:scale-90 flex items-center justify-center w-10 h-10 border rounded-full shadow-lg"
-        >
-          <HelpCircle size={18} />
-        </button>
       </header>
 
-      <main className="gap-2 relative z-10 flex flex-col w-full max-w-lg px-2 pb-4 mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+      <main className="gap-2 md:max-w-3xl md:px-4 relative z-10 flex flex-col w-full max-w-lg px-2 pb-6 mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {ALL_ERRORS.map((error, index) => renderCard(error, index))}
         </div>
       </main>
@@ -187,13 +207,32 @@ const App = () => {
 
                 {infoModal.image && (
                   <div
-                    className="opacity-30 absolute inset-0 bg-center bg-cover"
+                    className="opacity-20 absolute inset-0 bg-center bg-cover"
                     style={{ backgroundImage: `url(${infoModal.image})` }}
                   />
                 )}
 
                 <div className="relative z-10 flex flex-col flex-1">
-                  <div className="flex items-start justify-end w-full">
+                  <div className="flex items-start justify-between w-full">
+                    <div className="gap-1 bg-black/20 text-white/90 backdrop-blur-sm flex items-center px-2 py-1 rounded-full">
+                      <button
+                        onClick={() => decrement(infoModal.id)}
+                        className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                        aria-label="Mažinti"
+                      >
+                        -
+                      </button>
+                      <span className="w-8 text-sm font-black text-center">
+                        {modalCount}
+                      </span>
+                      <button
+                        onClick={() => increment(infoModal.id)}
+                        className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                        aria-label="Didinti"
+                      >
+                        +
+                      </button>
+                    </div>
                     <button
                       onClick={() => setInfoModal(null)}
                       className="bg-black/20 hover:bg-black/40 text-white/80 hover:text-white transition-colors backdrop-blur-sm p-2 rounded-full"
@@ -218,8 +257,9 @@ const App = () => {
                   <p className="text-slate-100 text-base leading-relaxed tracking-[0.01em] font-medium whitespace-pre-line">
                     {infoModal.longDesc}
                   </p>
+
                   {infoModal.examples && infoModal.examples.length > 0 && (
-                    <div className="space-y-3">
+                    <div className="space-y-3 pt-12">
                       <div className="flex items-center gap-2 text-[11px] font-black tracking-[0.3em] text-slate-400/90 uppercase">
                         <span className="bg-slate-500/40 w-6 h-px" />
                         <span>{infoModal.examplesTitle ?? "Pavyzdžiai"}</span>
@@ -251,7 +291,7 @@ const App = () => {
                       className="rounded-xl bg-rose-500/10 border-rose-400/20 active:scale-95 transition-all hover:bg-rose-500/20 text-rose-100 gap-2 inline-flex items-center px-6 py-3 text-sm font-bold tracking-wide border shadow-lg"
                     >
                       <RotateCcw size={16} />
-                      Atstatyti
+                      Atstatyti visus skaičiavimus
                     </button>
                   )}
                   <button

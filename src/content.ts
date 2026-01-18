@@ -6,10 +6,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Viskas Arba Nieko",
     desc: "Jei netobula - vadinasi, visiška nesėkmė.",
     longDesc:
-      "Mąstote kraštutinumais. Pavyzdžiui, jei darbas nėra atliktas tobulai, laikote jį visišku fiasko. Pasaulis matomas tik „juoda-balta“ spalvomis, be jokių atspalvių.",
+      "Mąstai kraštutinumais. Pavyzdžiui, jei darbas nėra atliktas tobulai, laikai jį visišku fiasko. Pasaulį matai tik „juoda-balta“ spalvomis, be jokių atspalvių.",
     examples: [
-      "„Gavau 8/10. Vadinasi, man visai nesiseka mokytis.“",
-      "„Jei nesportuoju kiekvieną dieną, tai visai nesu sportuojantis žmogus.“",
+      "Gavau 8/10. Vadinasi, man visai nesiseka mokytis.",
+      "Jei nesportuoju kiekvieną dieną, tai visai nesu sportuojantis žmogus.",
+      "Projektas nepavyko iš pirmo karto, taigi esu visiškas nevykėlis.",
     ],
     gradient: "from-pink-500/50 to-rose-500/50",
     textParams: "text-pink-100",
@@ -20,10 +21,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Perdėtas Apibendrinimas",
     desc: "Vienas neigiamas įvykis tampa begaline nesėkmių grandine.",
     longDesc:
-      "Remdamiesi vienu faktu, darote globalias išvadas. Jei kartą nepasisekė, manote, kad taip bus „visada“, ir naudojate žodžius „niekada“, „visur“, „visi“.",
+      "Remiesi vienu faktu, darai globalias išvadas. Jei kartą nepasisekė, manai, kad taip bus „visada“, ir naudoji žodžius „niekada“, „visur“, „visi“.",
     examples: [
-      "„Pirmas pasimatymas nepavyko, vadinasi, man niekada nesiseks su santykiais.“",
-      "„Pavėlavau vieną kartą - aš visada vėluoju.“",
+      "Pirmas pasimatymas nepavyko, vadinasi, man niekada nesiseks su santykiais.",
+      "Pavėlavau vieną kartą - aš visada vėluoju.",
+      "Padariau klaidą prezentacijoje, vadinasi, aš visur klystu.",
     ],
     gradient: "from-orange-400/50 to-amber-500/50",
     textParams: "text-orange-100",
@@ -34,10 +36,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Proto Filtras",
     desc: "Fokusuojatės į vieną negatyvią detalę, ignoruodami visumą.",
     longDesc:
-      "Iš didelio paveikslo išsirenkate vieną mažą neigiamą detalę ir susitelkiate tik į ją, taip apkartindami visą patirtį. Lyg lašas deguto statinėje medaus.",
+      "Iš didelio paveikslo išsirenki vieną mažą neigiamą detalę ir susitelki tik į ją, taip apkartini visą patirtį. Lyg lašas deguto statinėje medaus.",
     examples: [
-      "„Visi gyrė pristatymą, bet vienas kolega pasakė pastabą - vadinasi, buvo blogai.“",
-      "„Atostogos buvo puikios, bet paskutinę dieną lijo - viskas sugadinta.“",
+      "Visi gyrė pristatymą, bet vienas kolega pasakė pastabą - vadinasi, buvo blogai.",
+      "Atostogos buvo puikios, bet paskutinę dieną lijo - viskas sugadinta.",
+      "Draugai buvo patenkinti vakarėliu, bet aš girdėjau vieną kritiką ir ji sugadino nuotaiką.",
     ],
     gradient: "from-amber-300/50 to-yellow-500/50",
     textParams: "text-amber-100 gap-0",
@@ -48,10 +51,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Pozityvumo Nuvertinimas",
     desc: "Teigiami dalykai „nesiskaito“ dėl vienokių ar kitokių priežasčių.",
     longDesc:
-      "Atmetate teigiamas patirtis, sakydami, kad jos „nieko nereiškia“. Taip išlaikote negatyvų įsitikinimą, net kai faktai rodo priešingai.",
+      "Atmeti teigiamas patirtis ir sakai, kad jos „nieko nereiškia“. Taip išlaikai negatyvų įsitikinimą, net kai faktai rodo priešingai.",
     examples: [
-      "„Pavyko projektas, bet tiesiog pasisekė - čia ne mano nuopelnas.“",
-      "„Gavau komplimentą, bet žmonės tiesiog mandagūs.“",
+      "Pavyko projektas, bet tiesiog pasisekė - čia ne mano nuopelnas.",
+      "Gavau komplimentą, bet žmonės tiesiog mandagūs.",
+      "Vadovas pagyrė, bet tai tik todėl, kad jam reikėjo gero žodžio.",
     ],
     gradient: "from-rose-500/50 to-red-600/50",
     textParams: "text-rose-100",
@@ -62,10 +66,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Skubotos Išvados",
     desc: "Padarote neigiamas išvadas be aiškių įrodymų.",
     longDesc:
-      "Dvi formos: 1) Minčių skaitymas: manote, kad kiti jus vertina blogai, bet to nepatikrinate. 2) Ateities būrimas: esate įsitikinę, kad viskas baigsis liūdnai.",
+      "Dvi formos: 1) Minčių skaitymas: manai, kad kiti tave vertina blogai, bet to nepatikrini. 2) Ateities būrimas: įsitikini, kad viskas baigsis liūdnai.",
     examples: [
-      "„Ji neatrašė valandą - tikrai supyko ant manęs.“",
-      "„Jei bandysiu kalbėti susirinkime, tikrai apsijuoksiu.“",
+      "Ji neatrašė valandą - tikrai supyko ant manęs.",
+      "Jei bandysiu kalbėti susirinkime, tikrai apsijuoksiu.",
+      "Vadovas nepasisveikino koridoriuje, vadinasi, kažkuo nusivylė.",
     ],
     gradient: "from-lime-400/50 to-green-500/50",
     textParams: "text-lime-100",
@@ -76,10 +81,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Sureikšminimas / Sumenkinimas",
     desc: "Klaidas išpučiate, o pasiekimus traukiate iki nykštukų.",
     longDesc:
-      "Perdedate savo klaidų ar kitų žmonių sėkmės svarbą (katastrofizavimas) arba neadekvačiai sumažinate savo gerąsias savybes. Taip pat vadinama „žiūrono efektu“.",
+      "Perdedi savo klaidų ar kitų žmonių sėkmės svarbą (katastrofizavimas) arba neadekvačiai sumažini savo gerąsias savybes. Taip pat vadinama „žiūrono efektu“.",
     examples: [
-      "„Padariau klaidą laiške - tai katastrofa, mane atleis.“",
-      "„Man pasisekė, bet tai nieko nereiškia, kiti vis tiek geresni.“",
+      "Padariau klaidą laiške - tai katastrofa, mane atleis.",
+      "Man pasisekė, bet tai nieko nereiškia, kiti vis tiek geresni.",
+      "Jei neišėjau į treniruotę, tai esu tingus ir bevalis.",
     ],
     gradient: "from-emerald-400/50 to-teal-500/50",
     textParams: "text-emerald-100",
@@ -90,10 +96,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Emocinis Mąstymas",
     desc: "Jaučiuosi blogai, vadinasi, situacija yra bloga.",
     longDesc:
-      "Savo emocijas laikote neginčijamu tiesos įrodymu. „Jaučiuosi kaltas, vadinasi, padariau kažką blogo“. „Jaučiuosi nevykėlis, vadinasi, toks ir esu“.",
+      "Savo emocijas laikai neginčijamu tiesos įrodymu. „Jaučiuosi kaltas, vadinasi, padariau kažką blogo“. „Jaučiuosi nevykėlis, vadinasi, toks ir esu“.",
     examples: [
-      "„Jaučiu nerimą, vadinasi, tikrai bus blogai.“",
-      "„Jaučiuosi atstumtas, vadinasi, niekas manęs nemėgsta.“",
+      "Jaučiu nerimą, vadinasi, tikrai bus blogai.",
+      "Jaučiuosi atstumtas, vadinasi, niekas manęs nemėgsta.",
+      "Man nejauku susitikime, vadinasi, šie žmonės manęs nepriima.",
     ],
     gradient: "from-cyan-400/50 to-blue-500/50",
     textParams: "text-cyan-100",
@@ -104,10 +111,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "„Turiu“ ir „Privalau“",
     desc: "Save motyvuojate bausmėmis ir griežtais reikalavimais.",
     longDesc:
-      "Bandote save motyvuoti žodžiais „privalau“ ir „turiu“, lyg būtumėte nusikaltėlis. Tai sukelia kaltę ir nusivylimą. Kai taikote tai kitiems – jaučiate pyktį.",
+      "Bandai save motyvuoti žodžiais „privalau“ ir „turiu“, lyg būtum nusikaltėlis. Tai sukelia kaltę ir nusivylimą. Kai taikai tai kitiems – jauti pyktį.",
     examples: [
-      "„Aš privalau visada visiems įtikti, kitaip esu blogas žmogus.“",
-      "„Jis turi suprasti mane iš pirmo karto - kitaip jis manęs negerbia.“",
+      "Aš privalau visada visiems įtikti, kitaip esu blogas žmogus.",
+      "Jis turi suprasti mane iš pirmo karto - kitaip jis manęs negerbia.",
+      "Turiu atsakyti į žinutes iškart, kitaip esu nemandagus.",
     ],
     gradient: "from-blue-400/50 to-indigo-500/50",
     textParams: "text-blue-100",
@@ -118,10 +126,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Etikečių Klijavimas",
     desc: "Vietoj „padariau klaidą“, sakote „aš esu nevykėlis“.",
     longDesc:
-      "Tai kraštutinė apibendrinimo forma. Priklijuojate sau ar kitiems rigidinę, neigiamą etiketę, visiškai ignoruodami sudėtingesnį kontekstą.",
+      "Tai kraštutinė apibendrinimo forma. Priklijuoji sau ar kitiems rigidinę, neigiamą etiketę ir visiškai ignoruoji sudėtingesnį kontekstą.",
     examples: [
-      "„Pamiršau žadintuvą - aš esu tinginys.“",
-      "„Ji nesutiko - ji tiesiog šalta ir bloga.“",
+      "Pamiršau žadintuvą - aš esu tinginys.",
+      "Ji nesutiko - ji tiesiog šalta ir bloga.",
+      "Nepasakiau nieko pokalbyje - esu nuobodus žmogus.",
     ],
     gradient: "from-indigo-400/50 to-violet-500/50",
     textParams: "text-indigo-100",
@@ -132,10 +141,11 @@ export const ALL_ERRORS: ErrorConfig[] = [
     name: "Personalizavimas",
     desc: "Prisiimate atsakomybę už įvykius, kurių negalite kontroliuoti.",
     longDesc:
-      "Matote save kaip pagrindinę neigiamų išorinių įvykių priežastį, nors iš tikrųjų už tai nesate (arba nesate vieninteliai) atsakingi.",
+      "Matai save kaip pagrindinę neigiamų išorinių įvykių priežastį, nors iš tikrųjų už tai ne tu (arba ne tu vienas) atsakai.",
     examples: [
-      "„Vaikas susirgo - vadinasi, aš kažką padariau ne taip.“",
-      "„Komanda pralaimėjo - aš juos nuvyliau.“",
+      "Vaikas susirgo - vadinasi, aš kažką padariau ne taip.",
+      "Komanda pralaimėjo - aš juos nuvyliau.",
+      "Draugė liūdna, vadinasi, aš ją įskaudinau.",
     ],
     gradient: "from-violet-400/50 to-fuchsia-500/50",
     textParams: "text-violet-100",
@@ -145,15 +155,16 @@ export const ALL_ERRORS: ErrorConfig[] = [
 
 export const APP_INFO_MODAL: ErrorConfig = {
   id: "app_info",
-  name: "Trumpa Instrukcija",
+  name: "Mąstymo klaidos",
   desc: "Kas tai ir kaip naudotis",
   longDesc:
-    "Ši lenta padeda kasdien pastebėti mąstymo klaidas.\n\nTikslas nėra save teisti - tik atpažinti, kas vyksta mintyse.\n\nKuo dažniau pastebi, tuo lengviau keisti įpročius.",
+    "Čia gali prisiminti ir žymėti dažniausiai pasitaikančias mąstymo klaidas.\n\Teisti savęs nėra ko, tik atpažinti, kas dedasi galvoje.\n\nKuo dažniau pastebi, tuo lengviau keisti įpročius.",
   examplesTitle: "Kaip Tai Veikia",
   examples: [
-    "Bakstelėk kortelę - atsivers aprašymas ir pavyzdžiai.",
-    "Plius piktograma prideda vieną kartą, kai pagauni klaidą.",
-    "Skaičius viršuje rodo, kiek kartų ją pastebėjai šiandien ar šią savaitę.",
+    "Spausk ant kortelės. Atsivers aprašymas ir pavyzdžiai.",
+    "Kai pastebi mąstymo klaidą, spausk + ",
+    "Taip matysi, kurios pasitaiko dažniau.",
+    "Skaičius kortelėje rodo, kiek kartų pastebėjai tą klaidą.",
   ],
   gradient: "from-slate-700/80 to-slate-900/80",
   textParams: "",
