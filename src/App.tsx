@@ -71,7 +71,7 @@ const App = () => {
         />
 
         <div
-          className="opacity-40 mix-blend-overlay transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 absolute inset-0 bg-center bg-cover"
+          className="opacity-40 mix-blend-overlay transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:opacity-100 md:group-hover:scale-110 absolute inset-0 rounded-[2rem] bg-center bg-cover"
           style={{ backgroundImage: `url(${error.image})` }}
         />
 
