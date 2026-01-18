@@ -188,7 +188,7 @@ export const ALL_ERRORS: ErrorConfig[] = [
     absurdExamples: [
       "Kartą pasakiau „labas“ per tyliai. Esu Kasparas vaiduoklis.",
       "Neišploviau visų indų iškart. Sąvartyno valkata, tarakonų karalius.",
-      "Šitas žmogus pamiršo mano vardą. Jis debilas ar pasikėlęs?.",
+      "Šitas žmogus pamiršo mano vardą. Jis debilas ar pasikėlęs?",
     ],
     gradient: "from-indigo-400/50 to-violet-500/50",
     textParams: "text-indigo-100",
