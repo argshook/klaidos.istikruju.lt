@@ -285,7 +285,10 @@ const App = () => {
                 </div>
               </div>
 
-              <div className="p-6 bg-[#1e293b] overflow-y-auto min-h-0 flex-1">
+              <div
+                className="p-6 bg-[#1e293b] overflow-y-auto overscroll-contain touch-pan-y min-h-0 flex-1"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
                 <div className="space-y-5">
                   <p className="text-slate-100 text-base leading-relaxed tracking-[0.01em] font-medium whitespace-pre-line">
                     {infoModal.longDesc}
