@@ -26,6 +26,36 @@ const App = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ counts }));
   }, [counts]);
 
+  useEffect(() => {
+    if (!infoModal) return;
+    const scrollY = window.scrollY;
+    const { body, documentElement } = document;
+    const previousBody = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+    };
+    const previousHtml = {
+      overflow: documentElement.style.overflow,
+    };
+
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    documentElement.style.overflow = "hidden";
+
+    return () => {
+      body.style.overflow = previousBody.overflow;
+      body.style.position = previousBody.position;
+      body.style.top = previousBody.top;
+      body.style.width = previousBody.width;
+      documentElement.style.overflow = previousHtml.overflow;
+      window.scrollTo(0, scrollY);
+    };
+  }, [infoModal]);
+
   const increment = useCallback((id: string) => {
     navigator.vibrate?.(15); // Stronger haptic feedback
     setCounts((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
