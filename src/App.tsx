@@ -246,25 +246,42 @@ const App = () => {
                 <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex items-start justify-between w-full">
                     {showModalCounter && (
-                      <div className="gap-1 bg-black/20 text-white/90 backdrop-blur-sm flex items-center px-2 py-1 rounded-full">
-                        <button
-                          onClick={() => decrement(infoModal.id)}
-                          className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
-                          aria-label="Mažinti"
-                        >
-                          -
-                        </button>
-                        <span className="w-8 text-sm font-black text-center">
-                          {modalCount}
-                        </span>
-                        <button
-                          onClick={() => increment(infoModal.id)}
-                          className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
-                          aria-label="Didinti"
-                        >
-                          +
-                        </button>
-                      </div>
+                      <>
+                        {modalCount === 0 ? (
+                          <div className="gap-2 flex items-center">
+                            <button
+                              onClick={() => increment(infoModal.id)}
+                              className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white/70 hover:text-white transition-all active:scale-90 border-white/10 p-2 border rounded-full"
+                              aria-label="Didinti"
+                            >
+                              <Plus size={18} />
+                            </button>
+                            <span className="text-[11px] font-bold tracking-wide text-white/80">
+                              Pastebėjai? Pažymėk
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="gap-1 bg-black/20 text-white/90 backdrop-blur-sm flex items-center px-2 py-1 rounded-full">
+                            <button
+                              onClick={() => decrement(infoModal.id)}
+                              className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                              aria-label="Mažinti"
+                            >
+                              -
+                            </button>
+                            <span className="w-8 text-sm font-black text-center">
+                              {modalCount}
+                            </span>
+                            <button
+                              onClick={() => increment(infoModal.id)}
+                              className="h-7 w-7 transition-colors hover:bg-white/10 active:scale-90 text-lg font-semibold rounded-full"
+                              aria-label="Didinti"
+                            >
+                              +
+                            </button>
+                          </div>
+                        )}
+                      </>
                     )}
                     <button
                       onClick={() => setInfoModal(null)}
