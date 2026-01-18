@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { RotateCcw, X, Plus, HelpCircle } from "lucide-react";
-import { motion } from "motion/react";
 import { Sheet } from "react-modal-sheet";
 import { ALL_ERRORS, APP_INFO_MODAL } from "./content";
 import { ErrorConfig } from "./types";
@@ -57,14 +56,11 @@ const App = () => {
     const intensity = Math.min(count / 10, 1);
 
     return (
-      <motion.button
+      <button
         key={index}
         onClick={() => setInfoModal(error)}
-        whileHover={{ y: -3 }}
-        whileTap={{ scale: 0.96 }}
-        transition={{ type: "spring", stiffness: 500, damping: 32 }}
         className={`
-          relative group isolate overflow-hidden transition-all duration-300 ease-out active:scale-95 touch-manipulation
+          relative group isolate overflow-hidden transition-transform duration-200 ease-out hover:-translate-y-1 active:scale-95 touch-manipulation
           w-full aspect-[4/5] rounded-[2rem] flex flex-col justify-between p-4 shadow-lg
           bg-[#1e293b] border border-white/5
         `}
@@ -114,7 +110,7 @@ const App = () => {
             {error.desc}
           </p>
         </div>
-      </motion.button>
+      </button>
     );
   };
 
