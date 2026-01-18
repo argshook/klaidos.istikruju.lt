@@ -1,6 +1,9 @@
 # Mąstymo klaidų bingo
 
-Trumpas, minimalistinis įrankis mąstymo klaidoms pastebėti ir stebėti. 
-Atidarai kortelę, perskaitai aprašą, o paspaudus pliusą pridedi vieną pastebėjimą.
+Įrankiukas mąstymo klaidoms pastebėti.
 
-Gyva versija: https://klaidos.istikruju.lt
+10 dažniausiai pasitaikančių mąstymo klaidų su pavyzdžiais.
+
+Pagal Dr. David Burns knygą [Feeling Good: The New Mood Therapy](https://www.goodreads.com/book/show/46674.Feeling_Good)
+
+# [klaidos.istikruju.lt](https://klaidos.istikruju.lt)
