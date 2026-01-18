@@ -3,7 +3,7 @@ import { ErrorConfig } from "./types";
 export const ALL_ERRORS: ErrorConfig[] = [
   {
     id: "viskas_arba_nieko",
-    name: "Viskas Arba Nieko",
+    name: "Viskas arba nieko",
     desc: "Jei netobula - vadinasi, visiška nesėkmė.",
     longDesc:
       "Mąstai kraštutinumais. Pavyzdžiui, jei darbas nėra atliktas tobulai, laikai jį visišku fiasko. Pasaulį matai tik „juoda-balta“ spalvomis, be jokių atspalvių.",

@@ -161,7 +161,7 @@ const App = () => {
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[100px] pointer-events-none" />
       <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-rose-600/10 blur-[100px] pointer-events-none" />
 
-      <header className="md:max-w-3xl relative z-50 w-full max-w-lg px-4 pt-10 pb-8 mx-auto">
+      <header className="md:max-w-3xl relative z-50 w-full max-w-lg px-4 pt-10 pb-8 mx-auto select-none">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-slate-950/80 backdrop-blur-xl shadow-[0_20px_80px_-40px_rgba(59,130,246,0.6)]">
           <div className="-top-16 -left-10 bg-emerald-400/20 blur-3xl absolute w-40 h-40 rounded-full pointer-events-none" />
           <div className="-bottom-20 right-6 bg-rose-500/20 blur-3xl absolute w-48 h-48 rounded-full pointer-events-none" />
@@ -187,7 +187,7 @@ const App = () => {
         </div>
       </header>
 
-      <main className="gap-2 md:max-w-3xl md:px-4 relative z-10 flex flex-col w-full max-w-lg px-2 pb-6 mx-auto">
+      <main className="gap-2 md:max-w-3xl md:px-4 relative z-10 flex flex-col w-full max-w-lg px-2 pb-6 mx-auto select-none">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {ALL_ERRORS.map((error, index) => renderCard(error, index))}
         </div>
