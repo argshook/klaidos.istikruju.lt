@@ -140,7 +140,7 @@ const App = () => {
                 Mąstymo Klaidos
               </h1>
               <p className="sm:text-sm text-slate-300/80 mt-1 text-xs font-bold uppercase">
-                Atpažinti ir žymėk
+                Atpažink ir pažymėk
               </p>
             </div>
             <button

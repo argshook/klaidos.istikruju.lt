@@ -220,7 +220,7 @@ export const ALL_ERRORS: ErrorConfig[] = [
 export const APP_INFO_MODAL: ErrorConfig = {
   id: "app_info",
   name: "Mąstymo klaidos",
-  desc: "Kas tai ir kaip naudotis",
+  desc: "Kas tai ir kaip naudoti",
   longDesc:
     "Čia gali pasitikrinti ir žymėti dažniausiai pasitaikančias mąstymo klaidas.\n\nTeisti savęs nėra reikalo. Geriau mokytis atpažinti, kas dedasi galvoje.\n\nKuo dažniau pastebi, tuo lengviau keisti įpročius.",
   examplesTitle: "Kaip Tai Veikia",
