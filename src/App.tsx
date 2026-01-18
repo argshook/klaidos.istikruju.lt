@@ -227,7 +227,7 @@ const App = () => {
                 <div className="h-1.5 w-14 rounded-full bg-white/80 shadow-[0_2px_10px_rgba(255,255,255,0.35)]" />
               </div>
               <div
-                className={`relative w-full p-6 min-h-[220px] h-full bg-gradient-to-br ${infoModal.gradient} overflow-hidden shrink-0 flex flex-col`}
+                className={`relative w-full p-6 min-h-[280px] h-full bg-gradient-to-br ${infoModal.gradient} overflow-hidden shrink-0 flex flex-col`}
               >
                 <div
                   className="opacity-20 absolute inset-0"
@@ -268,7 +268,7 @@ const App = () => {
                     )}
                     <button
                       onClick={() => setInfoModal(null)}
-                      className="ml-auto bg-black/20 hover:bg-black/40 text-white/80 hover:text-white transition-colors backdrop-blur-sm p-2 rounded-full"
+                      className="bg-black/20 hover:bg-black/40 text-white/80 hover:text-white transition-colors backdrop-blur-sm p-2 ml-auto rounded-full"
                     >
                       <X size={20} />
                     </button>
