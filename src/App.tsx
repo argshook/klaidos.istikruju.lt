@@ -168,9 +168,10 @@ const App = () => {
         isOpen={Boolean(infoModal)}
         onClose={() => setInfoModal(null)}
         disableScrollLocking
+        className="max-w-lg mx-auto"
       >
         <Sheet.Container
-          className="!bg-[#1e293b] border border-white/10 shadow-2xl rounded-t-[2rem] sm:rounded-[2rem] max-h-[90vh] w-full sm:max-w-sm sm:mx-auto overflow-hidden"
+          className="!bg-[#1e293b] border border-white/10 shadow-2xl rounded-t-[2rem] sm:rounded-[2rem] w-full"
           style={{}}
         >
           <Sheet.Header className="pt-2 pb-1">
