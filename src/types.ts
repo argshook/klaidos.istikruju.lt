@@ -5,6 +5,7 @@ export interface ErrorConfig {
   longDesc?: string;
   examples?: string[];
   examplesTitle?: string;
+  absurdExamples?: string[];
   gradient: string;
   textParams: string;
   image: string;

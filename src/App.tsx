@@ -335,6 +335,45 @@ const App = () => {
                       </div>
                     </div>
                   )}
+
+                  {infoModal.absurdExamples &&
+                    infoModal.absurdExamples.length > 0 && (
+                      <div className="space-y-3 pt-10">
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2 text-[11px] font-black tracking-[0.3em] text-slate-400/90 uppercase">
+                            <span className="bg-slate-500/40 w-6 h-px" />
+                            <span>Absurdiški pavyzdžiai</span>
+                            <span className="bg-slate-500/30 flex-1 h-px" />
+                          </div>
+                          <p className="text-[11px] font-semibold text-slate-400/80">
+                            Neįtikėtini pavyzdžiai, kad būtų lengviau prisiminti
+                            mąstymo klaidos esmę.
+                          </p>
+
+                          <p className="text-[11px] font-semibold text-slate-400/80">
+                            Į tokius tikrai galima atsakyti "Ką tu čia
+                            nusišneki".
+                          </p>
+                        </div>
+                        <div className="grid gap-3">
+                          {infoModal.absurdExamples.map(
+                            (example, exampleIndex) => (
+                              <div
+                                key={`${infoModal.id}-absurd-example-${exampleIndex}`}
+                                className="relative rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+                              >
+                                <div className="gap-3 flex items-start">
+                                  <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white/70 shadow-[0_0_10px_rgba(255,255,255,0.4)]" />
+                                  <p className="text-slate-200 text-sm leading-relaxed">
+                                    {example}
+                                  </p>
+                                </div>
+                              </div>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    )}
                 </div>
 
                 <div className="gap-3 flex flex-wrap justify-center mt-6">
